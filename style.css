@@ -1,0 +1,161 @@
+/**************************************************************
+ * Nom .......... : style.css
+ * Rôle ......... : Feuille de style principale du portfolio.
+ *                  Elle applique la charte graphique, le responsive design,
+ *                  les animations et le style général du site web.
+ * Auteur ....... : Nourreddine ASROUN – Étudiant n° 24000377
+ * Version ...... : V1.0 du 19/07/2025
+ * Licence ...... : Réalisé dans le cadre du cours Informatique Fondamentale Partie 2
+ *                  à l’Université Paris 8
+ * Technologies . : CSS3, Flexbox, Media Queries, Google Fonts, Bootstrap 4
+ * Utilisation .. : Fichier lié à la page index.html pour le style global,
+ *                  les couleurs, polices, mise en page, responsive mobile, etc.
+ **************************************************************/
+
+
+/* Conteneur global pour limiter la largeur */
+.container {
+  max-width: 1000px; /* taille max largeur */
+  margin: 0 auto; /* centrer */
+  padding: 20px; /* espace intérieur */
+}
+
+/* style Général */
+
+body{
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    /* couleur text */
+    color: #333333;
+    background: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* Centrer image bannière */
+header img {
+  display: block; /*prend toute la largeur*/
+  margin: 0 auto;
+  width: 100%;
+  height: 150px; /* Réduire la hauteur de l'image  */
+  object-fit: cover;
+}
+
+
+
+/* Utilisation de div et float pour organiser deux colonnes */
+.section-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden; /* Pour que le conteneur englobe bien les floats */
+}
+
+/* Colonne gauche */
+.left-col {
+  float: left; /* Utilisation de float a gauche  */
+  width: 65%;
+}
+
+/* Colonne droite */
+.right-col {
+  float: right; /* Utilisation de float à droite  */
+  width: 30%;
+}
+
+
+/* Colonne centre */
+.center-col {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px; /* largeur texte */
+}
+
+/* pied de page */
+footer {
+  background-color: grey;   /* clouleur du fond */
+  color: white;             /* couleur du text */
+  text-align: center;       /* centrer le texte */
+  padding: 5px 0;          /* espace entre text et la box */
+}
+
+/* Tableau */
+table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+
+  color: black;
+}
+
+/* couleur de fon devient foncé lors du passage de la sourie */
+tr:hover { 
+  background-color: #ddd;
+}
+
+
+
+/* Container général */
+.section-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
+
+/* Appliquer un clear à la fin de chaque section pour réinitialiser les flottants */
+section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* span sur le mot portfolio */
+span.portfolio {
+color: blue;
+
+}
+
+/* pour gérer l'empolement des collones sur els mobiles */
+@media (max-width: 768px) {
+  .left-col, .right-col {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* On lien avec le javascript pour l'effet fade-in  et cliquer */
+
+/* Efffet fade-in pour les éléments */
+.fade-in {
+  opacity: 0; /* invisible par défaut */
+  transform: translateY(80px); /* décalage vers le bas */
+  transition: opacity 1.6s ease-out, transform 1s ease-out; /* transition pour l'opacité et la translation */
+}
+
+.fade-in.visible {/* visible quand l'élément est dans la fenêtre */
+  opacity: 1; /* devient visible */
+  transform: translateY(0); /* revient à sa position d'origine */
+}
+
+
+/* Effet de clic sur les éléments cliquables */
+.cliquable { /* classe pour les éléments cliquables */
+  cursor: pointer;/* curseur pointeur pour indiquer que l'élément est cliquable */
+  transition: color 0.4s ease; /* transition pour la couleur */
+}
+
+.cliquable.clicked { /* classe ajoutée au clic */
+  color: #3200d7; /* Rouge élégant */
+}
+
+
